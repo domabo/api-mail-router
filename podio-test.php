@@ -9,7 +9,7 @@ echo "STARTING10<br>";
 require_once( '../../../wp-load.php' );
 
 echo "STARTING3<br>";
-//require_once 'Podio/PodioAPI.php';
+require_once 'Podio/PodioAPI.php';
 echo "STARTING2<br>";
 
   $PODIO_CLIENTID = get_option('PODIO_CLIENTID');
