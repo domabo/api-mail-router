@@ -11,6 +11,7 @@ define( 'WP_DEBUG', true );
 define( 'WP_DEBUG_LOG', false );
 
 define( 'WP_DEBUG_DISPLAY', true );
+
 try {
 echo "STARTING<br";
 define( 'WP_USE_THEMES', false );
