@@ -29,6 +29,6 @@ require_once 'Podio/PodioAPI.php';
    $existingContacts = PodioContact::get_for_app( $appid, $attributes = $contact_fields_index);
 
    print_r($existingContacts);
-
+echo "<br>DONE<br";
 
 ?>   
