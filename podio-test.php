@@ -23,7 +23,16 @@ echo "STARTING<br>";
 echo "DONE<br>";
 
   if (count($existingContacts)>0)
-      print_r($existingContacts);
+  {
+
+  	 if (count($existingContacts)>0)
+      {
+        $first =  $existingContacts[0];
+        $ep_profile_id = $first->profile_id;
+        echo $ep_profile_id;
+      } 
+
+  }
 echo "<br>DONE<br";
 
  } catch (PodioError $e) {
