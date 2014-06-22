@@ -2,7 +2,7 @@
 
 try {
 
-echo "STARTING1<br";
+echo "STARTING10<br";
  define( 'WP_USE_THEMES', false );
 # Load WordPress Core
 // Assuming we're in a subdir: "~/wp-content/plugins/current_dir"
