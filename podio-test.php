@@ -1,5 +1,5 @@
 <?php
-
+try {
 echo "STARTING<br";
 define( 'WP_USE_THEMES', false );
 # Load WordPress Core
@@ -30,5 +30,15 @@ require_once 'Podio/PodioAPI.php';
 
    print_r($existingContacts);
 echo "<br>DONE<br";
+
+ } catch (PodioError $e) {
+
+     echo  "There was an error. Podio responded with the error type " . $e->body['error'] ." and the mesage " . $e->body['error_description'] . ".";
+
+    } catch (Exception $e) {
+
+      echo "There was a general exception: " . $$e->getMessage();
+
+    }
 
 ?>   
