@@ -17,7 +17,7 @@ require_once 'Podio/PodioAPI.php';
  Podio::setup($PODIO_CLIENTID, $PODIO_CLIENTSECRET);
     Podio::authenticate_with_app($PODIO_APPID, $PODIO_APPSECRET);
 
- $contact_fields_index = array("name"=>"Guy Barnard", "mail"=>array($"guy-facebook@barnardmail.net"));
+ $contact_fields_index = array("name"=>"Guy Barnard", "mail"=>array("guy-facebook@barnardmail.net"));
 echo "STARTING<br>";
    $existingContacts = PodioContact::get_for_app( $PODIO_APPID , $attributes = $contact_fields_index);
 echo "DONE<br>";
