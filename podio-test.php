@@ -14,28 +14,37 @@ require_once 'Podio/PodioAPI.php';
   $PODIO_APPSECRET = get_option('PODIO_APPSECRET1');
   $PODIO_SPACEID = get_option('PODIO_SPACEID');
 
- Podio::setup($PODIO_CLIENTID, $PODIO_CLIENTSECRET);
-    Podio::authenticate_with_app($PODIO_APPID, $PODIO_APPSECRET);
+   Podio::setup($PODIO_CLIENTID, $PODIO_CLIENTSECRET);
+   Podio::authenticate_with_app($PODIO_APPID, $PODIO_APPSECRET);
 
  $contact_fields_index = array("name"=>"Guy Barnard", "mail"=>array("guy-facebook@barnardmail.net"));
  $contact_fields=$contact_fields_index;
+
+
+ $item_fields =  array(
+    "source" => 1,
+    "facebook-id" => "TEST"
+     );
 echo "STARTING<br>";
-   $existingContacts = PodioContact::get_for_app( $PODIO_APPID , $attributes = $contact_fields_index);
-echo "DONE<br>";
 
-  if (count($existingContacts)>0)
-  {
+ $existingContacts = PodioContact::get_for_app( $PODIO_APPID , $attributes = $contact_fields_index);
 
-  	 if (count($existingContacts)>0)
+      if (count($existingContacts)>0)
       {
         $first =  $existingContacts[0];
         $ep_profile_id = $first->profile_id;
 
-        $test= PodioContact::update( $ep_profile_id, $contact_fields );
-        print_r($test);
-      } 
+        PodioContact::update( $ep_profile_id, $contact_fields );
 
-  }
+      } else
+      {
+        $ep_profile_id = PodioContact::create( $PODIO_SPACEID, $contact_fields);
+      }
+
+      $item_fields[$contact_target_tag] = $ep_profile_id;
+
+      PodioItem::create( $PODIO_APPID ,  array('fields' => $item_fields));
+ 
 echo "<br>DONE<br";
 
  } catch (PodioError $e) {
