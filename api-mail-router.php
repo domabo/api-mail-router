@@ -15,6 +15,12 @@ License: GPLv2 or later
 
 @ini_set( 'error_reporting', E_ALL );
 
+define( 'WP_DEBUG', true );
+
+define( 'WP_DEBUG_LOG', false );
+
+define( 'WP_DEBUG_DISPLAY', true );
+
 class amr_Plugin {
 	private static $amr_instance;
 

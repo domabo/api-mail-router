@@ -9,7 +9,7 @@ echo "STARTING1<br";
 require_once( '../../../wp-load.php' );
 
 echo "STARTING3<br";
-require_once 'Podio/PodioAPI.php';
+//require_once 'Podio/PodioAPI.php';
 
 echo "STARTING2<br";
 
