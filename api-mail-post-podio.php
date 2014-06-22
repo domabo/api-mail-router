@@ -28,7 +28,8 @@ function sendPodio($data)
     $contact_facebook = "";
   }
 
-  amrPodio::authenticate($PODIO_CLIENTID, $PODIO_CLIENTSECRET, $PODIO_APPID, $PODIO_APPSECRET);
+  amrPodio::setup($PODIO_CLIENTID, $PODIO_CLIENTSECRET);
+  amrPodio::authenticate($PODIO_APPID, $PODIO_APPSECRET);
 
   return amrPodio::createContactItem($PODIO_APPID, $PODIO_SPACEID, $contact_name, $contact_email, $contact_facebook, $item_fields, "contact");
 
