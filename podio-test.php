@@ -22,7 +22,7 @@ echo "STARTING2<br>";
  Podio::setup($PODIO_CLIENTID, $PODIO_CLIENTSECRET);
     Podio::authenticate_with_app($PODIO_APPID, $PODIO_APPSECRET);
 
- $contact_fields_index = array("name"=>"Guy Barnard", "mail"=>array("guy-facebook@barnardmail.net"));
+ $contact_fields_index = array("mail"=>array("guy-facebook@barnardmail.net"));
 
    $existingContacts = PodioContact::get_for_app( $appid, $attributes = $contact_fields_index);
 
