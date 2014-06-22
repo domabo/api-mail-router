@@ -6,9 +6,6 @@ define( 'WP_USE_THEMES', false );
 require_once( '../../../wp-load.php' );
 require_once( 'api-mail-post-podio.php' );
 
-
-
-
  define( 'WP_USE_THEMES', false );
 # Load WordPress Core
 // Assuming we're in a subdir: "~/wp-content/plugins/current_dir"
@@ -26,11 +23,11 @@ require_once 'Podio/PodioAPI.php';
  Podio::setup($PODIO_CLIENTID, $PODIO_CLIENTSECRET);
     Podio::authenticate_with_app($PODIO_APPID, $PODIO_APPTOKEN);
 
- $contact_fields_index = array("name"=>"Guy Barnard", "mail"=>"array("guy-facebook@barnardmail.net")");
+ $contact_fields_index = array("name"=>"Guy Barnard", "mail"=>array("guy-facebook@barnardmail.net"));
 
    $existingContacts = PodioContact::get_for_app( $appid, $attributes = $contact_fields_index);
 
    print_r($existingContacts);
 
-   
+
 ?>   
