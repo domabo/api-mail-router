@@ -1,35 +1,17 @@
 <?php
 
-
-
 try {
 
-define( 'WP_USE_THEMES', false );
-
- @ini_set( 'log_errors', 'Off' );
-
-@ini_set( 'display_errors', 'On' );
-
-@ini_set( 'error_reporting', E_ALL );
-
-define( 'WP_DEBUG', true );
-
-define( 'WP_DEBUG_LOG', false );
-
-define( 'WP_DEBUG_DISPLAY', true );
-
-echo "STARTING2<br";
-# Load WordPress Core
-// Assuming we're in a subdir: "~/wp-content/plugins/current_dir"
-require_once( '../../../wp-load.php' );
-echo "STARTING3<br";
-
+echo "STARTING1<br";
  define( 'WP_USE_THEMES', false );
 # Load WordPress Core
 // Assuming we're in a subdir: "~/wp-content/plugins/current_dir"
 require_once( '../../../wp-load.php' );
+
+echo "STARTING3<br";
 require_once 'Podio/PodioAPI.php';
 
+echo "STARTING2<br";
 
   $PODIO_CLIENTID = get_option('PODIO_CLIENTID');
   $PODIO_CLIENTSECRET = get_option('PODIO_CLIENTSECRET');
