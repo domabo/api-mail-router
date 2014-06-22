@@ -85,7 +85,6 @@ class amrPodio
       $contact_fields_index = array("name"=>$contact_name, "mail"=>array($contact_email));
       $contact_fields = $contact_fields_index;
 
-
       if (!empty($contact_facebook))
       {
         $filename = amrFacebook::get_fb_img($contact_facebook);
