@@ -65,11 +65,6 @@ class amrPodio
 
   public static function createContactItem($appid, $spaceid, $contact_name, $contact_email, $contact_facebook, &$item_fields, $contact_target_tag)
   {
-    if (!Podio::is_authenticated())
-    {
-      self::authenticate($appid, $apptoken);
-    }
-  
     try
     {
 
@@ -84,6 +79,7 @@ class amrPodio
           if ($filename)
           {
             $fid = PodioFile::upload ($filename, $contact_facebook . ".jpg");
+            echo $fid->file_id;
             $contact_fields["avatar"] = ($fid->file_id);
           }
         }
