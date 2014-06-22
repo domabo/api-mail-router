@@ -41,7 +41,7 @@ echo "STARTING<br>";
         $ep_profile_id = PodioContact::create( $PODIO_SPACEID, $contact_fields);
       }
 
-      $item_fields[$contact_target_tag] = $ep_profile_id;
+      $item_fields["contact"] = $ep_profile_id;
 
       PodioItem::create( $PODIO_APPID ,  array('fields' => $item_fields));
  
