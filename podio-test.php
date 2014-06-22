@@ -18,11 +18,11 @@ define( 'WP_DEBUG_LOG', false );
 
 define( 'WP_DEBUG_DISPLAY', true );
 
-echo "STARTING<br";
+echo "STARTING2<br";
 # Load WordPress Core
 // Assuming we're in a subdir: "~/wp-content/plugins/current_dir"
 require_once( '../../../wp-load.php' );
-require_once( 'api-mail-post-podio.php' );
+echo "STARTING3<br";
 
  define( 'WP_USE_THEMES', false );
 # Load WordPress Core
