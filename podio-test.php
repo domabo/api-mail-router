@@ -2,16 +2,15 @@
 
 try {
 
-echo "STARTING10<br";
+echo "STARTING10<br>";
  define( 'WP_USE_THEMES', false );
 # Load WordPress Core
 // Assuming we're in a subdir: "~/wp-content/plugins/current_dir"
 require_once( '../../../wp-load.php' );
 
-echo "STARTING3<br";
+echo "STARTING3<br>";
 //require_once 'Podio/PodioAPI.php';
-
-echo "STARTING2<br";
+echo "STARTING2<br>";
 
   $PODIO_CLIENTID = get_option('PODIO_CLIENTID');
   $PODIO_CLIENTSECRET = get_option('PODIO_CLIENTSECRET');
